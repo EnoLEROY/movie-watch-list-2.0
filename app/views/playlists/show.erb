@@ -1,0 +1,10 @@
+<div class="top-bar">
+  <h2><%= @playlist.name %></h2>
+</div>
+
+<div class="song-list">
+<% @playlist.songs.each do |song| %>
+  <p> <%= song.title %>, <%= song.artist %> (<%= song.genre %>)</p>
+
+<% end %>
+</div>

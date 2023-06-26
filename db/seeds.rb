@@ -61,9 +61,18 @@ songs.each do |song|
 end
 
 Playlist.new(name: "All").save
+Playlist.new(name: "All1").save
+Playlist.new(name: "All2").save
+Playlist.new(name: "All4").save
+Playlist.new(name: "All5").save
+Playlist.new(name: "All6").save
+Playlist.new(name: "All7").save
+Playlist.new(name: "All8").save
+Playlist.new(name: "All9").save
+Playlist.new(name: "All10").save
 
 all_songs.each do |song|
-  like = Like.new(playlist: Playlist.last, song: song)
+  like = Like.new(playlist: Playlist.first, song: song)
   like.save
   p like
 end
