@@ -14,13 +14,24 @@ class PlaylistsController < ApplicationController
 
   def create
     @playlist = Playlist.new(params_playlist)
-    
     if @playlist.save
       redirect_to playlist_path(@playlist)
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
+  def edit
+    @playlist = Playlist.find(params[:id])
+  end
+
+  def update
+    @playlist = Playlist.find(params[:id])
+    if @playlist.update(params_playlist)
+      redirect_to playlist_path(@playlist)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private

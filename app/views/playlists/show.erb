@@ -1,8 +1,13 @@
 <div class="navbar-lewagon d-flex justify-content-between mb-3 p-3">
   <h2><%= @playlist.name %></h2>
+  <div class='d-flex'>
+  <%= link_to edit_playlist_path do  %>
+  <button class="btn btn-info me-1">Edit</button>
+  <% end %>
   <%= link_to playlists_path do  %>
   <button class="btn btn-info">Back</button>
   <% end %>
+  </div>
 </div>
 
 <div class="container">

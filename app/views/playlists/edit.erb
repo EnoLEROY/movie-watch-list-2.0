@@ -1,0 +1,15 @@
+<div class="navbar-lewagon d-flex justify-content-between mb-3 p-3">
+  <h2>Edit Playlist</h2>
+  <%= link_to playlists_path do  %>
+  <button class="btn btn-info">Back</button>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="card m-1">
+    <%= simple_form_for @playlist do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "playlists#index"
 
-  resources :playlists, only: %i[index show new create edit updaate destroy]
+  resources :playlists, only: %i[index show new create edit update destroy]
 
 end
