@@ -8,9 +8,28 @@ class PlaylistsController < ApplicationController
     @playlist = @playlists.find(params[:id])
   end
 
+  def new
+    @playlist = Playlist.new
+  end
+
+  def create
+    @playlist = Playlist.new(params_playlist)
+    
+    if @playlist.save
+      redirect_to playlist_path(@playlist)
+    else
+      render :new, status: :unprocessable_entity
+    end
+
+  end
+
   private
 
   def set_playlists
     @playlists = Playlist.all
+  end
+
+  def params_playlist
+    params.require(:playlist).permit(:name)
   end
 end

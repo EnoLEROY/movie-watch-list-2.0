@@ -1,12 +1,14 @@
 <div class="navbar-lewagon d-flex justify-content-between mb-3 p-3">
-  <h2><%= @playlist.name %></h2>
+  <h2>New Playlist</h2>
   <%= link_to playlists_path do  %>
   <button class="btn btn-info">Back</button>
   <% end %>
 </div>
 
+
 <div class="container">
-<% @playlist.songs.each do |song| %>
-  <p> <%= song.title %>, <%= song.artist %> (<%= song.genre %>)</p>
-<% end %>
+  <%= simple_form_for @playlist do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "btn btn-info" %>
+  <% end %>
 </div>
