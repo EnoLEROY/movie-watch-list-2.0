@@ -7,8 +7,5 @@
 
 
 <div class="container">
-  <%= simple_form_for @playlist do |f| %>
-  <%= f.input :name %>
-  <%= f.submit class: "btn btn-info" %>
-  <% end %>
+  <%= render 'form', playlist: @playlist %>
 </div>

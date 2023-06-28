@@ -15,7 +15,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(params_playlist)
     if @playlist.save
-      redirect_to playlist_path(@playlist)
+      redirect_to playlists_path
     else
       render :new, status: :unprocessable_entity
     end
