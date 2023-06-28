@@ -4,6 +4,9 @@
   <%= link_to edit_playlist_path do  %>
   <button class="btn btn-info me-1">Edit</button>
   <% end %>
+  <%= link_to playlist_path(@playlist), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  do  %>
+  <button class="btn btn-info me-1">Delete</button>
+  <% end %>
   <%= link_to playlists_path do  %>
   <button class="btn btn-info">Back</button>
   <% end %>
